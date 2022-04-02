@@ -1,0 +1,46 @@
+@import "../colors";
+@import "../breakpoints";
+
+.search-root {
+    background-color: $primary;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: -webkit-fill-available;
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    .logo {
+        margin-right: 5px;
+        cursor: pointer;
+    }
+    .input {
+        width: 50%;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border: none;
+        padding: 10px;
+        outline: none;
+        color: $secondary-hover;
+        font-size: 18px;
+        &::placeholder {
+            color: $secondary-hover;
+        }
+
+       /* @media (min-width: $md) {
+           
+        }*/
+    }
+    button {
+        border: none;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px; 
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+}
+
+
