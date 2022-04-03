@@ -1,12 +1,14 @@
 import React from 'react';
 import FreeShippingLogo from '../../assets/images/ic_shipping.png';
 import '../../assets/sass/components/ItemList/itemStyles.scss'
+import { useNavigate } from 'react-router-dom';
 
 export default function ItemView(props) {
   const {item} = props;
+  const navigate = useNavigate();
 
   return (
-   <div className='item-root'>
+   <div className='item-root' onClick={() => navigate("/itemDetails")}>
        <div className='item-picture'><img src={item?.picture} alt="item" className='item-picture'/></div>
        <div className='item-info'>
            <div className='item-info-header'>
