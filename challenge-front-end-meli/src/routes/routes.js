@@ -1,5 +1,5 @@
 import {lazy} from 'react'
-const ItemList = lazy(()=> import ('../components/ItemList/itemListMainView'));
+const ItemList = lazy(()=> import ('../components/ItemList/itemListView'));
 const ItemDetails = lazy(()=> import ('../components/ItemDetails/itemDetailsMainView'));
 
 const routes = [
