@@ -3,19 +3,18 @@
 
 .search-root {
     background-color: $primary;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: -webkit-fill-available;
     display: flex;
-    padding: 10px;
+    padding: 10px 10%;
     justify-content: center;
+    @media (min-width: $md) {
+        padding: 10px 18%;
+    }
     .logo {
         margin-right: 5px;
         cursor: pointer;
     }
     .input {
-        width: 50%;
+        width: 100%;
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
         border: none;
@@ -26,10 +25,6 @@
         &::placeholder {
             color: $secondary-hover;
         }
-
-       /* @media (min-width: $md) {
-           
-        }*/
     }
     button {
         border: none;
