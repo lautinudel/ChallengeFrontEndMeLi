@@ -1,10 +1,17 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "../../assets/sass/components/ItemList/itemListStyles.scss";
 import Breadcrumb from "../common/breadcrumbsView.jsx";
 import Item from "./itemView.jsx";
 
 export default function ItemListView(props) {
   //const { } = props;
+  const [search, setSearch] = useState(null);
+
+  useEffect(()=> {
+    const urlParams = new URLSearchParams(window.location.search);
+    setSearch(urlParams.get('search'));  
+  },[])
+
 
   const categories = ["Juguetes", "Funkos"]
   const items = [
@@ -76,7 +83,13 @@ export default function ItemListView(props) {
             );
           })
         :
-          <h3 className="default-label">No se encontraron elementos</h3>
+          <>
+          {search ?
+            <h3 className="default-label">No se encontraron elementos</h3> 
+            :
+            <h3 className="default-label">Realiza una busqueda para comenzar :)</h3>
+          }
+          </>
         }
         </div>
       </div>

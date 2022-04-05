@@ -22,8 +22,8 @@ export default (
       <SearchBarView />
       <Routes>
         {getRoutes()}
-        <Route exact path="/" element={<Navigate to="/itemList" />}/>
-        <Route path="*" element={<Navigate to="/itemList" />}/>
+        <Route exact path="/" element={<Navigate to="/items" />}/>
+        <Route path="*" element={<Navigate to="/items" />}/>
       </Routes>
     </Suspense>
   </BrowserRouter>
