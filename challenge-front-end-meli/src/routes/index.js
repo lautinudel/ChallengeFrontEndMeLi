@@ -1,6 +1,7 @@
 import React, {Suspense} from 'react';
 import {Route, Routes, BrowserRouter, Navigate} from 'react-router-dom';
 import routes from "./routes";
+import SearchBarView from '../components/SearchBar/searchBarView.';
 
 const getRoutes = () => {
   return routes.map((prop, index) => {
@@ -18,10 +19,11 @@ const getRoutes = () => {
 export default (
   <BrowserRouter>
     <Suspense fallback={undefined}>
+      <SearchBarView />
       <Routes>
         {getRoutes()}
-        <Route exact path="/" element={<Navigate to="/itemList" />}/>
-        <Route path="*" element={<Navigate to="/itemList" />}/>
+        <Route exact path="/" element={<Navigate to="/items" />}/>
+        <Route path="*" element={<Navigate to="/items" />}/>
       </Routes>
     </Suspense>
   </BrowserRouter>

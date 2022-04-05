@@ -1,12 +1,12 @@
 import {lazy} from 'react'
 const ItemList = lazy(()=> import ('../components/ItemList/itemListView'));
-const ItemDetails = lazy(()=> import ('../components/ItemDetails/itemDetailsMainView'));
+const ItemDetails = lazy(()=> import ('../components/ItemDetails/itemDetailsView'));
 
 const routes = [
   {
-    path: 'itemList',
-    name: 'itemList',
-    layout: '/itemList',
+    path: 'items',
+    name: 'items',
+    layout: '/items',
     element: <ItemList/>,
   },
   {
