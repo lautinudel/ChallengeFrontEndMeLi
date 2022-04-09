@@ -2,17 +2,19 @@ import React, {useState, useEffect} from 'react';
 import MeliLogo from '../../assets/images/Logo_ML.png';
 import Search from '../../assets/images/ic_Search.png';
 import '../../assets/sass/components/SearchBar/searchBarStyles.scss'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function SearchBarView(props) {
   //const { } = props;
   const navigate = useNavigate();
+  const pathname = useLocation();
   const [search, setSearch] = useState("");
 
   useEffect(()=> {
     const urlParams = new URLSearchParams(window.location.search);
-    setSearch(urlParams.get('search'));  
-  },[]);
+    let searchParam = urlParams.get('search');
+    setSearch(searchParam ? searchParam : "");  
+  },[pathname]);
 
   const onEnterPress = (e) => {
     if (e.key === "Enter") {
@@ -21,10 +23,11 @@ export default function SearchBarView(props) {
   };
 
   const handleSearch = () => {
-    navigate({
-      pathname: '/items',
-      search: `?search=${search}`,
-    })
+    if(search)
+      navigate({
+        pathname: '/items',
+        search: `?search=${search}`,
+      })
   }
 
 

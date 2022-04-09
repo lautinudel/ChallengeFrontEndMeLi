@@ -1,5 +1,5 @@
 const api = require('../api');
-const { ItemsResponse } = require('../models/Response');
+const { ItemsResponse } = require('../models/ItemResponse');
 
 const itemController = {
   getItems: function ({ query }, res) {
@@ -18,8 +18,7 @@ const itemController = {
                 });
             }
           }
-          const response = Object.assign(new ItemsResponse([], data.results), {});
-          console.log(response)
+          const response = {...new ItemsResponse([], data.results)};
           res.status(200).send(response);
       })
       .catch(error => res.status(404).send({ error }));

@@ -12,7 +12,7 @@ class Response {
     decimals;
 
     constructor(currency, amount) {
-        this.decimals = Math.round(amount % 1 * 100) / 100;
+        this.decimals = Math.round(Math.round((amount % 1) * 100) / 100);
         this.currency = currency;
         this.amount = Math.round(amount);
     }

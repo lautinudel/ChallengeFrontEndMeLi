@@ -21,7 +21,10 @@
         padding: 10px;
         outline: none;
         color: $secondary-hover;
-        font-size: 18px;
+        font-size: 13px;
+        @media (min-width: $sm) {
+            font-size: 18px;
+        }
         &::placeholder {
             color: $secondary-hover;
         }
