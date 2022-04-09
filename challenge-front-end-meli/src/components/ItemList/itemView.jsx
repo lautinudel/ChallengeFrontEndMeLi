@@ -13,7 +13,7 @@ export default function ItemView(props) {
        <div className='item-info'>
            <div className='item-info-header'>
              <div className='container-price'>
-              <p className='label-price'>{item?.price?.currency}{item?.price?.amount},{item?.price?.decimals}</p>
+              <p className='label-price'>{item?.price?.currency} ${item?.price?.amount}{item?.price?.decimals ? ","+item?.price?.decimals : ''}</p>
               {item?.free_shipping && <div><img src={FreeShippingLogo} alt="free-shipping" className="free-shipping-logo" /></div>}
               </div>
               <p className='label-address'>{item?.address}</p>

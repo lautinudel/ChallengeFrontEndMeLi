@@ -32,11 +32,19 @@
         width: 200px;
         height: 200px;
         border-radius: 4px;
+        @media (min-width: $sm) {
+            width: 250px;
+            height: 250px;
+        }
         @media (min-width: $md) {
-            width: 350px;
-            height: 350px;
+            width: 300px;
+            height: 300px;
         }
         @media (min-width: $lg) {
+            width: 450px;
+            height: 450px;
+        }
+        @media (min-width: $xl) {
             width: 680px;
             height: 680px;
         }
