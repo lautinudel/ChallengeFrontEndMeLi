@@ -32,7 +32,7 @@ class Response {
         this.title = title;
         this.price = new Price(currency_id, price);
         this.picture = thumbnail;
-        this.condition = condition;
+        this.condition = this.getConditionType(condition);
         this.free_shipping = shipping.free_shipping;
         this.address = address.state_name;
     }
@@ -48,12 +48,24 @@ class Response {
   }
   
   class ItemsResponse extends Response {
-    categories = [];
+    categories;
     items = [];
     constructor(categories, items) {
       super();
       this.categories = categories;
-      this.items = items.map(item => new Item( item.id, item.title, item.currency_id, item.price, item.thumbnail, item.condition, item.shipping, item.address));
+      this.items = items.map(
+        (item) =>
+          new Item(
+            item.id,
+            item.title,
+            item.currency_id,
+            item.price,
+            item.thumbnail,
+            item.condition,
+            item.shipping,
+            item.address
+          )
+      );
     }
   }
   

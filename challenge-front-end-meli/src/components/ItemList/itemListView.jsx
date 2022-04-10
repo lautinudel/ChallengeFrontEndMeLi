@@ -24,7 +24,7 @@ export default function ItemListView(props) {
           setCategories(data.categories);
           setLoading(false);
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {console.log(err);  setLoading(false);});
     }else{
       resetStates();
     }
