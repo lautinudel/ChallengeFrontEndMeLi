@@ -8,7 +8,7 @@ export default function ItemView(props) {
   const navigate = useNavigate();
 
   return (
-   <div className='item-root' onClick={() => navigate("/itemDetails")}>
+   <div className='item-root' onClick={() => navigate(`/items/${item?.id}`)}>
        <div className='item-picture'><img src={item?.picture} alt="item" className='item-picture'/></div>
        <div className='item-info'>
            <div className='item-info-header'>

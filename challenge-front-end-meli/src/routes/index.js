@@ -8,7 +8,6 @@ const getRoutes = () => {
   return routes.map((prop, index) => {
       return (
         <Route
-          exact
           {...prop}
           key={index}
         />

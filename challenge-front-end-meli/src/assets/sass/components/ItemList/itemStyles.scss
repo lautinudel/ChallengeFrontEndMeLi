@@ -68,6 +68,9 @@
         width: 100%;
         text-align: left;
         @media (min-width: $sm) {
+            max-width: 120px;
+        }
+        @media (min-width: $md) {
             max-width: 180px;
         }
     }
@@ -82,6 +85,8 @@
         -webkit-box-orient: vertical;
         @media (min-width: $md) {
             font-size: 18px;
+        }
+        @media (min-width: $lg) {
             max-width: 50%;
         }
     }

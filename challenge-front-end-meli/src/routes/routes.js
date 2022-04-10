@@ -7,12 +7,14 @@ const routes = [
     path: 'items',
     name: 'items',
     layout: '/items',
+    exact: true,
     element: <ItemList/>,
   },
   {
-    path: 'itemDetails',
-    name: 'itemDetails',
-    layout: '/itemDetails',
+    path: '/items/:id',
+    name: '/items/:id',
+    exact: false,
+    layout: '/items/:id',
     element: <ItemDetails/>,
   },
 ];
