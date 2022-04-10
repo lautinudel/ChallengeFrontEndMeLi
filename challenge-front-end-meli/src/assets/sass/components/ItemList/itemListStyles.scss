@@ -1,0 +1,42 @@
+@import "../colors";
+@import "../breakpoints";
+
+.item-list-root {
+    background-color: $background-secondary;
+    width: 100%;
+    min-height: 100vh;
+    .item-list-secondary {
+        padding: 0 6%;
+        display: flex;
+        flex-direction: column;
+        @media (min-width: $sm) {
+            padding: 0 10%;
+        }
+        @media (min-width: $md) {
+            padding: 0 18%;
+        }
+    }
+    .item-list-container {
+        background-color: $background-primary;
+        border-radius: 5px;
+        margin-bottom: 50px;
+        min-height: 100vh;
+    }
+    .loadingContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .default-container {
+        margin-top: 100px;
+    }
+    .divider {
+        background-color: $background-secondary;
+        width: 98%;
+        height: 2px;
+        border: none;
+    }
+    .default-label{
+        color: $text-primary;
+    }
+}
